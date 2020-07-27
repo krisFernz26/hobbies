@@ -34,6 +34,9 @@
 		background-color: black;
 	}
 }
+em {
+	animation: black-to-green-text 2000ms forwards infinite alternate-reverse;
+}
 body {
 	background-color: black;
 	color: var(--main-accent);
@@ -241,7 +244,7 @@ h2 {
 #contact .contact-infos {
 	display: grid;
 	height: 50%;
-	margin: 10% 20%;
+	margin: 10% 20% 5% 20%;
 	grid-template-rows: 33% 33% 33%;
 	justify-items: space-evenly;
 	align-items: space-around;
@@ -279,5 +282,5 @@ h2 {
 #who img:hover,
 #contact img:hover {
 	border: solid 6px var(--main-accent);
-	box-shadow: 0 5px 20px var(--main-accent);
+	box-shadow: 0 5px 20px #00d3076c;
 }
