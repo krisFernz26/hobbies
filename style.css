@@ -4,20 +4,53 @@
 	padding: 0;
 	scroll-behavior: smooth;
 }
+:root {
+	--main-accent: #00d308;
+}
+@keyframes grow {
+	from {
+		opacity: 0.2;
+		width: 0%;
+	}
+	to {
+		opacity: 1;
+		width: 100%;
+	}
+}
+
+@keyframes black-to-green-text {
+	from {
+		color: black;
+	}
+	to {
+		color: var(--main-accent);
+	}
+}
+@keyframes green-to-black-bg {
+	from {
+		background-color: var(--main-accent);
+	}
+	to {
+		background-color: black;
+	}
+}
 body {
 	background-color: black;
-	color: #00d308;
+	color: var(--main-accent);
 	font-family: "Roboto Mono", monospace;
 	overflow: hidden;
 }
 a {
 	text-decoration: none;
-	color: #00d308;
+	color: var(--main-accent);
 	font-size: 1.5em;
 	transition: all ease-in-out 300ms;
 }
 a:hover {
 	color: #56ff5b;
+}
+p {
+	text-align: justify;
 }
 section {
 	width: 100%;
@@ -29,7 +62,7 @@ footer {
 	left: 0;
 	right: 0;
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 0.6em;
 }
 h2 {
 	font-size: 2em;
@@ -37,7 +70,7 @@ h2 {
 	text-align: center;
 }
 .source {
-	font-size: 0.6em;
+	font-size: 0.4em;
 	text-align: center;
 }
 #landing {
@@ -142,14 +175,14 @@ h2 {
 	cursor: pointer;
 }
 #what img {
-	border: #00d308 2px solid;
+	border: var(--main-accent) 2px solid;
 	display: block;
 	margin: 5% auto;
 	width: 300px;
 }
 #who img {
 	border-radius: 50%;
-	border: solid 4px #00d308;
+	border: solid 4px var(--main-accent);
 	width: 150px;
 	margin: 5% auto 5% auto;
 	display: block;
@@ -160,7 +193,6 @@ h2 {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	grid-template-rows: 33% 33% 33%;
-	cursor: pointer;
 }
 .skills .html {
 	grid-row: 1/2;
@@ -180,8 +212,8 @@ h2 {
 	transition: ease-in-out 300ms all;
 }
 .skill-bar {
-	background-color: #00d308;
-	height: 1em;
+	background-color: var(--main-accent);
+	height: 1.3em;
 	text-align: center;
 	display: grid;
 	font-size: 0.8em;
@@ -200,8 +232,8 @@ h2 {
 .skill-bars .javascript {
 	width: 80%;
 }
-.skills:hover > .skill-bars {
-	width: 100%;
+.skill-bars {
+	animation: grow 1s forwards infinite linear alternate-reverse;
 }
 #contact {
 	display: inline;
@@ -220,18 +252,23 @@ h2 {
 .contact-infos div {
 	height: 1.5em;
 	width: calc(100% + 15px);
-	background-color: #00d308;
 	text-align: center;
 	margin: 0 auto 5% auto;
+	justify-content: center;
+	align-items: center;
+	animation: black-to-green-text 1000ms infinite forwards linear alternate;
+	animation: green-to-black-bg 1000ms infinite forwards linear alternate;
 }
 .contact-infos p {
 	color: black;
 	font-weight: 700;
+	font-size: 0.8rem;
+	text-align: center;
 }
 #contact img {
 	width: 20%;
 	border-radius: 50%;
-	border: #00d308 solid 4px;
+	border: var(--main-accent) solid 4px;
 	display: block;
 	margin: 50px auto;
 	cursor: pointer;
@@ -241,6 +278,6 @@ h2 {
 #what img:hover,
 #who img:hover,
 #contact img:hover {
-	border: solid 6px #00d308;
-	box-shadow: 0 5px 20px #00d308;
+	border: solid 6px var(--main-accent);
+	box-shadow: 0 5px 20px var(--main-accent);
 }
